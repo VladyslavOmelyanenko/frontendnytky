@@ -130,19 +130,19 @@ const EventsPage = () => {
             January 20 <br></br> Botel, Amsterdam
           </h3>
           <div className={styles.images}>
-            <img src={img1}></img>
-            <img src={img2}></img>
-            <img src={img3}></img>
-            <img src={img4}></img>
+            <img src={img1} alt=""></img>
+            <img src={img2} alt=""></img>
+            <img src={img3} alt=""></img>
+            <img src={img4} alt=""></img>
           </div>
           <h3>
             January 20 <br></br> Botel, Amsterdam
           </h3>
           <div className={styles.images}>
-            <img src={img1}></img>
-            <img src={img2}></img>
-            <img src={img3}></img>
-            <img src={img4}></img>
+            <img src={img1} alt=""></img>
+            <img src={img2} alt=""></img>
+            <img src={img3} alt=""></img>
+            <img src={img4} alt=""></img>
           </div>
         </section>
       </section>
