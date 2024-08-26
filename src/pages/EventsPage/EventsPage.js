@@ -38,7 +38,7 @@ const EventsPage = () => {
   const pastEvents = [];
   const futureEvents = [];
 
-  events && events.EventsDates.map(event => {
+  events && events.EventsDates.forEach(event => {
     const currentDate = new Date();
     const eventDate = Date.parse(event.date);
     if (currentDate > eventDate) {
