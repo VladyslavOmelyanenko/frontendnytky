@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
 
-function App() {
+import "./App.css";
+
+import RedirectToEn from './components/RedirectToEn';
+
+import AboutPage from "./pages/AboutPage/AboutPage";
+import EventsPage from "./pages/EventsPage/EventsPage"
+import EmbroideryCirclesPage from "./pages/EmbroideryCirclesPage/EmbroideryCirclesPage";
+import MainPage from "./pages/MainPage/MainPage";
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Routes>
+      <Route path="/" element={<RedirectToEn />} />
+      <Route path="/:language" element={<MainPage />} />
+      <Route path="/:language/about" element={<AboutPage />} />
+      <Route path="/:language/events" element={<EventsPage />} />
+      <Route path="/:language/embroidery-circles" element={<EmbroideryCirclesPage />} />
+    </Routes>
   );
-}
+};
 
 export default App;

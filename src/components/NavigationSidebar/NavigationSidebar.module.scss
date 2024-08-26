@@ -1,0 +1,130 @@
+.navigationMenu {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  img {
+    max-height: 100%;
+    width: auto;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+  .menuLinks {
+    position: absolute;
+    top: 7%;
+    left: 38%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background: rgba($color: #fff, $alpha:0.6) ;
+
+    li {
+      width: 100%;
+      line-height: 100%;
+      font-family: 'Steedle';
+      -webkit-text-stroke-width: 1.4px;
+
+      a {
+        height: 100%;
+        display: inline-flex;
+        cursor: pointer;
+        // border-bottom: 4px solid;
+        // border-image: url("../../../public/border.png") 100% 2  repeat;
+        &:hover {
+          // border-image: none;
+          // padding-bottom: 1px;
+          // border-bottom: 3px solid;]
+        }
+      }
+      a.nytky {
+        -webkit-text-stroke-width: 1.4px;
+        &::selection {
+          background: black;
+          color: white;
+        }
+        &:hover {
+          border-bottom: 6px solid;
+          border-image: url("../../../public/border8.png") 100% 1 repeat;
+          margin-bottom: -6px;
+        }
+      }
+
+      a.nytky.active {
+        border-bottom: 6px solid;
+        border-image: url("../../../public/border8.png") 100% 1 repeat;
+        margin-bottom: -6px;
+      }
+
+      a.about {
+        color: #FF6817;
+        &::selection {
+          background: #FF6817;
+          color: white;
+        }
+        &:hover {
+          border-bottom: 6px solid;
+          border-image: url("../../../public/border-orange.png") 100% 1 repeat;
+          margin-bottom: -6px;
+        }
+      }
+      a.about.active {
+        border-bottom: 6px solid;
+        border-image: url("../../../public/border-orange.png") 100% 1 repeat;
+        margin-bottom: -6px;
+      }
+
+      a.events {
+        color: #FF2EA4;
+        &::selection {
+          background: #FF2EA4;
+          color: white;
+        }
+        &:hover {
+            border-bottom: 6px solid;
+            border-image: url("../../../public/border-pink.png") 100% 1 repeat;
+            margin-bottom: -6px;
+          }
+      }
+      a.events.active {
+        border-bottom: 6px solid;
+        border-image: url("../../../public/border-pink.png") 100% 1 repeat;
+        margin-bottom: -6px;
+      }
+
+      a.embroideryCircles {
+        display: flex;
+        flex-direction: column;
+        color: #9F2120;
+        span {
+          text-decoration: none;
+          &::selection {
+            background: #9F2120;
+            color: white;
+          }
+        }
+        &:hover {
+          span {
+            border-bottom: 6px solid;
+            border-image: url("../../../public/border-red.png") 100% 1 repeat;
+            text-decoration: none;
+            width: 100%;
+            margin-bottom: -6px;
+          }
+          }
+      }
+      a.embroideryCircles.active {
+        border-bottom: 6px solid;
+        border-image: url("../../../public/border-red.png") 100% 1 repeat;
+        margin-bottom: -6px;
+
+        span {
+            border-bottom: 6px solid;
+            border-image: url("../../../public/border-red.png") 100% 1 repeat;
+            text-decoration: none;
+            width: 100%;
+            margin-bottom: -6px;
+          }
+      }
+    }
+  }
+}

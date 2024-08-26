@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'MTimes';
+  src: url('../public/timesmedium.otf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'Lentekabinet';
+  src: url('../public/lentekabinet.ttf');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: 'Bodoni Ornaments';
+  src: url('../public/BodoniOrnaments.ttf');
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+  font-family: 'Arial Rounded';
+  src: url('../public/arialroundedlight.TTF');
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+  font-family: 'PP Sans';
+  src: url('../public/ppsimplesans.woff');
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: 'Steedle';
+  src: url('../public/steedle.ttf');
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  line-height: 150%;
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

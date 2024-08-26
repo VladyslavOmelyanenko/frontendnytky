@@ -1,0 +1,138 @@
+
+.main {
+  display: flex;
+  gap: 20px;
+  font-size: 19px;
+  font-family: 'PP Sans', Arial, sans-serif;
+  width: calc(100vw);
+  height: calc(100vh - 20px);
+  position: relative;
+  overflow-x: scroll;
+  
+
+  .navigationSection {
+    width: 440px;
+    height: 440px;
+    position: absolute;
+    left: -80px;
+    top: -20px;
+  }
+
+  .mainSectionWrapper {
+    margin-left: 370px;
+    margin-right: 200px;
+    padding-top: 20px;
+  }
+
+  .languageMenu {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .mainSection {
+    color: #ff7817;
+    columns: 320px auto;
+    max-height: 90vh;
+    column-gap: 60px;
+    width: 400px;
+   
+
+
+    h2 {
+      font-weight: normal;
+      margin-bottom: 19px;
+      font-size: 26px;
+      padding-left: 26px;
+      margin-top: 44px;
+      span {
+        &::selection {
+          background: #FF6817;
+          color: white;
+        }
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+
+    p {
+      white-space: pre-wrap;
+      margin-bottom: 19px;
+      &::selection {
+        background: #FF6817;
+        color: white;
+      }
+      em {
+        &::selection {
+          background: #FF6817;
+          color: white;
+        }
+      }
+      a {
+        border-bottom: 2px solid;
+        &::selection {
+            background: #FF6817;
+            color: white;
+
+          }
+      }
+      a:hover {
+        border-bottom: 4px solid;
+        border-image: url("../../../public/border-orange.png") 100% 2 repeat;
+      }
+    }
+  }
+  .ornaments {
+    font-family: 'Bodoni Ornaments';
+    position: absolute;
+    bottom: 20px;
+    left: 150px;
+    font-size: 50px;
+    width: 100%;
+    word-break: keep-all;
+    text-wrap: nowrap;
+  }
+
+  .rightPadding {
+    height: 90vh;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    flex-direction: column;
+    padding-top: 0;
+    height: auto;
+    .navigationSection {
+      left: 0;
+      height: auto;
+      top: 0px;
+      width: 100%;
+      position: relative;
+    }
+  
+    .mainSectionWrapper {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0 20px 0px 20px;
+      margin-bottom: 45px;
+
+    }
+
+    .mainSection {
+      columns: 1;
+      max-height: none;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main .mainSectionWrapper {
+    padding: 0 15px;
+    font-size: 18px;
+  }
+}

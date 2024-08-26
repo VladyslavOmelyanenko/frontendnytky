@@ -1,0 +1,61 @@
+:root {
+  --doc-height: 100%;
+}
+
+.mainPage {
+  font-family: 'PP Sans';
+  overflow: hidden;
+ 
+
+  .mainMenu {
+    height: 90vh;
+    width: 90vh;
+    max-width: 100%;
+    margin-left: calc((100% - 90vh) / 2);
+    object-fit: cover;
+  }
+
+  .languageMenu {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .footnote {
+    font-size: 19px;  
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    right: 24px;
+    text-align: right;
+    span {
+      background: #fff;
+      &::selection {
+        background: black;
+        color: white;
+      }
+    }
+  }
+  .ornament {
+    font-family: 'Bodoni Ornaments';
+    &::selection {
+      background: black;
+      color: white;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .mainPage {
+    .mainMenu {
+      height: var(--doc-height);
+      width: var(--doc-height);
+      margin-left: calc((100% - var(--doc-height)) / 2);
+      // margin-left: 5vw;
+    }
+
+    .footnote {
+      width: 70%;
+    }
+  }
+}
