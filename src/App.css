@@ -1,21 +1,6 @@
 @font-face {
-  font-family: 'MTimes';
-  src: url('../public/timesmedium.otf');
-}
-
-@font-face {
-  font-family: 'Lentekabinet';
-  src: url('../public/lentekabinet.ttf');
-}
-
-@font-face {
   font-family: 'Bodoni Ornaments';
   src: url('../public/BodoniOrnaments.ttf');
-}
-
-@font-face {
-  font-family: 'Arial Rounded';
-  src: url('../public/arialroundedlight.TTF');
 }
 
 @font-face {

@@ -1,3 +1,6 @@
+.main::-webkit-scrollbar {
+  display: none;
+}
 
 .main {
   display: flex;
@@ -8,6 +11,9 @@
   height: calc(100vh - 20px);
   position: relative;
   overflow-x: scroll;
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   
 
   .navigationSection {
@@ -28,6 +34,21 @@
     position: fixed;
     bottom: 20px;
     left: 20px;
+    display: flex;
+    width: calc(100% - 40px);
+    justify-content: space-between;
+    .returnButton {
+      background: white;
+      display: none;
+      text-wrap: nowrap;
+      // width: 150px;
+      cursor: pointer;
+      align-items: center;
+      svg {
+        margin-right: 10px;
+        height: 15px;
+      }
+    }
   }
 
   .mainSection {
@@ -71,7 +92,7 @@
         }
       }
       a {
-        border-bottom: 2px solid;
+        border-bottom: 2px dotted;
         &::selection {
             background: #FF6817;
             color: white;
@@ -104,7 +125,6 @@
 @media screen and (max-width: 800px) {
   .main {
     flex-direction: column;
-    padding-top: 0;
     height: auto;
     .navigationSection {
       left: 0;
@@ -117,7 +137,7 @@
     .mainSectionWrapper {
       margin-left: 0;
       margin-right: 0;
-      padding: 0 20px 0px 20px;
+      padding: 50px 20px 0px 20px;
       margin-bottom: 45px;
 
     }
@@ -132,7 +152,7 @@
 
 @media screen and (max-width: 600px) {
   .main .mainSectionWrapper {
-    padding: 0 15px;
+    padding: 50px 15px 0 15px;
     font-size: 18px;
   }
 }
