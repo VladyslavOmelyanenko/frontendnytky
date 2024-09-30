@@ -36,6 +36,9 @@
   p {
     margin-bottom: 19px;
   }
+  img {
+    display: block;
+  }
 
   a {
     border-bottom: 2px dotted;
@@ -103,7 +106,6 @@
     font-family: 'PP Sans';
     font-size: 19px;
     text-wrap: nowrap;
-    width: 150px;
     align-items: center;
     cursor: pointer;
     svg {
@@ -111,6 +113,7 @@
       height: 15px;
     }
   }
+  
 }
 
 @media screen and (max-width: 800px) {

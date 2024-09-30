@@ -22,7 +22,14 @@ const EmbroideryCirclesPage = () => {
   const GROQ_QUERY =
     language &&
     `*[_type == "embroideryCircles" && language == '${language}']{
-    _id, info
+    _id, 
+    info[]{
+      ...,
+      _type == "image" => {
+        "imageUrl": asset->url,
+        "altText": alt
+      }
+    }
   }`;
 
   const data = useFetchData(GROQ_QUERY);
@@ -37,6 +44,25 @@ const EmbroideryCirclesPage = () => {
     });
     returnButtonRef.current.style.display = "none";
   };
+
+
+  const components = {
+    types: {
+      image: ({ value }) => {
+        if (!value?.imageUrl) {
+          return null; // If there is no image URL, return nothing
+        }
+        return (
+          <img
+            src={value.imageUrl}
+            alt={value.altText || "Image"}
+            style={{ width: "90%", height: "auto" }} // Customize styles as needed
+          />
+        );
+      },
+    },
+  };
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -83,7 +109,7 @@ const EmbroideryCirclesPage = () => {
       <section className={styles.mainInfo}>
         {data && (
           <div>
-            <PortableText value={[...data.info]} />
+            <PortableText value={[...data.info]} components={components} />
           </div>
         )}
         {/* <>
