@@ -30,7 +30,7 @@ const MainPage = () => {
   return (
     <main className={styles.mainPage}>
       <div className={styles.mainMenu}>
-        <NavigationMenu fz={"9vh"} />
+        <NavigationMenu fz={"8vh"} />
       </div>
       <div className={styles.languageMenu}>
         <LanguageMenu />

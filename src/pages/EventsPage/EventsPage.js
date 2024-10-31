@@ -123,37 +123,41 @@ const EventsPage = () => {
   return (
     <main className={styles.main} ref={scrollContainerRef}>
       <section className={styles.navigationSection}>
-        {isMobile ? <MobileNavigation /> : <NavigationMenu fz={"40px"} />}
+        {isMobile ? <MobileNavigation /> : <NavigationMenu fz={"37px"} />}
       </section>
       <section className={styles.mainInfo}>
         <section className={styles.events}>
-          <h2 className={styles.eventsTitle}>{t("Future events")}</h2>
-          <ul className={styles.futureEvents}>
-            {events &&
-              futureEvents.map((event) => (
-                <li>
-                  {new Date(event.date).getDate() +
-                    " " +
-                    t(monthsNames[new Date(event.date).getMonth()]) +
-                    " " +
-                    event.times +
-                    "—" +
-                    event.place}
-                </li>
-              ))}
-          </ul>
-          <a
-            className={styles.signUpButton}
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfT6HdkpvC2pGq82UFU--TBD8qPMrJyn7YXsVGD3Wec_h81PA/viewform"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {t("Sign up")}
-          </a>
-          <h2 className={styles.eventsTitle}>{t("Past events")}</h2>
+          {futureEvents.length > 0 && (
+            <>
+              <h2 className={styles.eventsTitle}>{t("Future workshops")}</h2>
+              <ul className={styles.futureEvents}>
+                {events &&
+                  futureEvents.map((event) => (
+                    <li>
+                      {new Date(event.date).getDate() +
+                        " " +
+                        t(monthsNames[new Date(event.date).getMonth()]) +
+                        " " +
+                        event.times +
+                        "—" +
+                        event.place}
+                    </li>
+                  ))}
+              </ul>
+              <a
+                className={styles.signUpButton}
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfT6HdkpvC2pGq82UFU--TBD8qPMrJyn7YXsVGD3Wec_h81PA/viewform"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {t("Sign up")}
+              </a>
+            </>
+          )}
+          <h2 className={styles.eventsTitle}>{t("Past workshops")}</h2>
           <ul className={styles.pastEvents}>
             {events &&
-              pastEvents.map((event) => (
+              pastEvents.reverse().map((event) => (
                 <li>
                   {new Date(event.date).getDate() +
                     " " +

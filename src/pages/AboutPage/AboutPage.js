@@ -84,7 +84,7 @@ const AboutPage = () => {
     <>
       <main className={styles.main} ref={scrollContainerRef}>
         <section className={styles.navigationSection}>
-          {isMobile ? <MobileNavigation /> : <NavigationMenu fz={"40px"} />}
+          {isMobile ? <MobileNavigation /> : <NavigationMenu fz={"37px"} />}
         </section>
         <section className={styles.mainSectionWrapper}>
           <div className={styles.mainSection}>

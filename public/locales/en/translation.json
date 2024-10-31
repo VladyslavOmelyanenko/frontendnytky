@@ -1,12 +1,12 @@
    {
       "NYTKY": "NYTKY",
       "About": "About",
-      "Events": "Events",
+      "Workshops": "Workshops",
       "Embroidery": "Embroidery",
       "Circles": "Circles",
       "shortProjectDescription": "*Project about traditional Ukrainian embroidery, its current journeys and new meanings",
-      "Future events": "Future events",
-      "Past events": "Past events",
+      "Future workshops": "Future workshops",
+      "Past workshops": "Past workshops",
       "Sign up": "Sign up",
       "January": "January",
       "February": "February",
@@ -20,5 +20,7 @@
       "October": "October",
       "November": "November",
       "December": "December",
-      "Return": "Return"
+      "Return": "Return",
+      "Past circles": "Past circles",
+      "Future circles": "Future circles"
    }

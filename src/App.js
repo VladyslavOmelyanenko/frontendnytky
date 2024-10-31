@@ -8,6 +8,7 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 import EventsPage from "./pages/EventsPage/EventsPage"
 import EmbroideryCirclesPage from "./pages/EmbroideryCirclesPage/EmbroideryCirclesPage";
 import MainPage from "./pages/MainPage/MainPage";
+import CollaborationPage from "./pages/CollaborationPage/CollaborationPage";
 
 
 const App = () => {
@@ -16,7 +17,8 @@ const App = () => {
       <Route path="/" element={<RedirectToEn />} />
       <Route path="/:language" element={<MainPage />} />
       <Route path="/:language/about" element={<AboutPage />} />
-      <Route path="/:language/events" element={<EventsPage />} />
+      <Route path="/:language/collaboration" element={<CollaborationPage />} />
+      <Route path="/:language/workshops" element={<EventsPage />} />
       <Route path="/:language/embroidery-circles" element={<EmbroideryCirclesPage />} />
     </Routes>
   );

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Language from "../../hooks/Language";
 
-import menuBackground from "./newmenu.png";
+import menuBackground from "./newupdatedmenu.png";
 
 import styles from "./NavigationMenu.module.scss";
 
@@ -40,19 +40,33 @@ const NavigationMenu = ({fz}) => {
           </li>
           <li>
             <NavLink
-              to={`/${currentLanguage}/events`}
+              to={`/${currentLanguage}/collaboration`}
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.active} ${styles.collaboration}`
+                  : styles.collaboration
+              }
+            >
+              {t("Collaboration")}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={`/${currentLanguage}/workshops`}
               className={({ isActive }) =>
                 isActive ? `${styles.active} ${styles.events}` : styles.events
               }
             >
-              {t("Events")}
+              {t("Workshops")}
             </NavLink>
           </li>
           <li>
             <NavLink
               to={`/${currentLanguage}/embroidery-circles`}
               className={({ isActive }) =>
-                isActive ? `${styles.active} ${styles.embroideryCircles}` : styles.embroideryCircles
+                isActive
+                  ? `${styles.active} ${styles.embroideryCircles}`
+                  : styles.embroideryCircles
               }
             >
               <span>{t("Embroidery")}</span>

@@ -2,7 +2,6 @@ import { PortableText } from "@portabletext/react";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-
 import NavigationMenu from "../../components/NavigationMenu/NavigationMenu";
 import MobileNavigation from "../../components/MobileNavigation/MobileNavigation";
 import LanguageMenu from "../../components/LanguageMenu/LanguageMenu";
@@ -10,20 +9,18 @@ import LanguageMenu from "../../components/LanguageMenu/LanguageMenu";
 import Language from "../../hooks/Language";
 import useFetchData from "../../hooks/useFetchData";
 
-import styles from "./EmbroideryCirclesPage.module.scss";
+import styles from "./CollaborationPage.module.scss";
 
-const EmbroideryCirclesPage = () => {
+const CollaborationPage = () => {
   const { t } = useTranslation();
-  const language = Language();
   const scrollContainerRef = useRef(null);
   const returnButtonRef = useRef(null);
-   const pastEvents = [];
-   const futureEvents = [];
-
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
+  const language = Language();
 
   const GROQ_QUERY =
     language &&
-    `*[_type == "embroideryCircles" && language == '${language}']{
+    `*[_type == "collaboration" && language == '${language}']{
     _id, 
     info[]{
       ...,
@@ -31,45 +28,11 @@ const EmbroideryCirclesPage = () => {
         "imageUrl": asset->url,
         "altText": alt
       }
-    },
-    circlesDates[]{
-    date,
-    times,
-    place,
-    "images": eventImagesRef->eventImages[]{ 'imageUrl': asset->url }
-  }
+    }
   }`;
 
   const data = useFetchData(GROQ_QUERY);
   data && console.log(data);
-
-  data &&
-    data.circlesDates.forEach((event) => {
-      const currentDate = new Date();
-      const eventDate = Date.parse(event.date);
-      if (currentDate > eventDate) {
-        pastEvents.push(event);
-      } else {
-        futureEvents.push(event);
-      }
-    });
-
-  const monthsNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
 
   const scrollBack = () => {
     const container = scrollContainerRef.current;
@@ -79,7 +42,6 @@ const EmbroideryCirclesPage = () => {
     });
     returnButtonRef.current.style.display = "none";
   };
-
 
   const components = {
     types: {
@@ -98,7 +60,6 @@ const EmbroideryCirclesPage = () => {
     },
   };
 
-
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 800);
@@ -108,17 +69,17 @@ const EmbroideryCirclesPage = () => {
     const handleWheel = (event) => {
       if (!isMobile) {
         event.preventDefault();
-         if (scrollContainerRef.current) {
-           const container = scrollContainerRef.current;
-           if (container.scrollLeft > 360) {
-             returnButtonRef.current.style.display = "flex";
-           } else {
-             returnButtonRef.current.style.display = "none";
-           }
+        if (scrollContainerRef.current) {
+          const container = scrollContainerRef.current;
+          if (container.scrollLeft > 360) {
+            returnButtonRef.current.style.display = "flex";
+          } else {
+            returnButtonRef.current.style.display = "none";
+          }
 
-           event.preventDefault();
-           container.scrollLeft += event.deltaY;
-         }
+          event.preventDefault();
+          container.scrollLeft += event.deltaY;
+        }
       }
     };
 
@@ -142,53 +103,13 @@ const EmbroideryCirclesPage = () => {
         {isMobile ? <MobileNavigation /> : <NavigationMenu fz={"37px"} />}
       </section>
       <section className={styles.mainInfo}>
-        <section className={styles.events}>
-          {futureEvents.length > 0 && (
-            <>
-              <h2 className={styles.eventsTitle}>{t("Future circles")}</h2>
-              <ul className={styles.futureEvents}>
-                {data &&
-                  futureEvents.map((event) => (
-                    <li>
-                      {new Date(event.date).getDate() +
-                        " " +
-                        t(monthsNames[new Date(event.date).getMonth()]) +
-                        " " +
-                        event.times +
-                        "—" +
-                        event.place}
-                    </li>
-                  ))}
-              </ul>
-              <span className={styles.signUpButton}>
-                <i>
-                  {t(
-                    "Дивіться інформацію про вишивальний клуб далі та приходьте на зустріч"
-                  )}
-                </i>  
-              </span>
-            </>
-          )}
-          <h2 className={styles.eventsTitle}>{t("Past circles")}</h2>
-          <ul className={styles.pastEvents}>
-            {data &&
-              pastEvents.reverse().map((event) => (
-                <li>
-                  {new Date(event.date).getDate() +
-                    " " +
-                    t(monthsNames[new Date(event.date).getMonth()]) +
-                    "—" +
-                    event.place}
-                </li>
-              ))}
-          </ul>
-        </section>
         {data && (
           <div>
             <PortableText value={[...data.info]} components={components} />
           </div>
         )}
       </section>
+
       {!isMobile && (
         <div className={styles.languageMenu}>
           <LanguageMenu />
@@ -217,4 +138,4 @@ const EmbroideryCirclesPage = () => {
   );
 };
 
-export default EmbroideryCirclesPage;
+export default CollaborationPage;
