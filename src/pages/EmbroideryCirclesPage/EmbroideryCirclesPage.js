@@ -155,7 +155,7 @@ const EmbroideryCirclesPage = () => {
                         t(monthsNames[new Date(event.date).getMonth()]) +
                         " " +
                         event.times +
-                        "—" +
+                        " — " +
                         event.place}
                     </li>
                   ))}
@@ -163,7 +163,7 @@ const EmbroideryCirclesPage = () => {
               <span className={styles.signUpButton}>
                 <i>
                   {t(
-                    "Дивіться інформацію про вишивальний клуб далі та приходьте на зустріч"
+                    "Embroidery meeting"
                   )}
                 </i>  
               </span>
@@ -177,7 +177,7 @@ const EmbroideryCirclesPage = () => {
                   {new Date(event.date).getDate() +
                     " " +
                     t(monthsNames[new Date(event.date).getMonth()]) +
-                    "—" +
+                    " — " +
                     event.place}
                 </li>
               ))}

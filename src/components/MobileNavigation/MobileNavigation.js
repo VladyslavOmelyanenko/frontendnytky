@@ -57,12 +57,24 @@ const MobileNavigation = () => {
         </li>
         <li>
           <NavLink
-            to={`/${currentLanguage}/events`}
+            to={`/${currentLanguage}/collaboration`}
+            className={({ isActive }) =>
+              isActive
+                ? `${styles.active} ${styles.collaboration}`
+                : styles.collaboration
+            }
+          >
+            {t("Collaboration")}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={`/${currentLanguage}/workshops`}
             className={({ isActive }) =>
               isActive ? `${styles.active} ${styles.events}` : styles.events
             }
           >
-            {t("Events")}
+            {t("Workshops")}
           </NavLink>
         </li>
         <li>

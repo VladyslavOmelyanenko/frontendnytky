@@ -139,7 +139,7 @@ const EventsPage = () => {
                         t(monthsNames[new Date(event.date).getMonth()]) +
                         " " +
                         event.times +
-                        "—" +
+                        " — " +
                         event.place}
                     </li>
                   ))}
@@ -162,7 +162,7 @@ const EventsPage = () => {
                   {new Date(event.date).getDate() +
                     " " +
                     t(monthsNames[new Date(event.date).getMonth()]) +
-                    "—" +
+                    " — " +
                     event.place}
                 </li>
               ))}

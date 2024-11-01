@@ -83,6 +83,9 @@
   ul {
     margin-bottom: 20px;
     list-style-type: none;
+    li {
+      margin-bottom: 5px;
+    }
     &:last-child {
       margin-bottom: 1000px;
     }
@@ -146,5 +149,11 @@
     padding: 15px;
     font-size: 18px;
     padding-top: 65px;
+
+    ul:last-child {
+      margin-bottom: 20px;
+    }
   }
+
+  
 }
