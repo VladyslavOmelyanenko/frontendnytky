@@ -40,14 +40,14 @@ const NavigationMenu = ({fz}) => {
           </li>
           <li>
             <NavLink
-              to={`/${currentLanguage}/collaboration`}
+              to={`/${currentLanguage}/new-designs`}
               className={({ isActive }) =>
                 isActive
                   ? `${styles.active} ${styles.collaboration}`
                   : styles.collaboration
               }
             >
-              {t("Collaboration")}
+              {t("New Designs")}
             </NavLink>
           </li>
           <li>

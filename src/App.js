@@ -17,7 +17,7 @@ const App = () => {
       <Route path="/" element={<RedirectToEn />} />
       <Route path="/:language" element={<MainPage />} />
       <Route path="/:language/about" element={<AboutPage />} />
-      <Route path="/:language/collaboration" element={<CollaborationPage />} />
+      <Route path="/:language/new-designs" element={<CollaborationPage />} />
       <Route path="/:language/workshops" element={<EventsPage />} />
       <Route path="/:language/embroidery-circles" element={<EmbroideryCirclesPage />} />
     </Routes>
